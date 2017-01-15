@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTC-kQ-lqw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Libros-->
+        <scene sceneID="ukF-xX-pRT">
+            <objects>
+                <tableViewController id="wpP-kW-NxX" customClass="ViewController" customModule="Libros" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xfF-qy-hkA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="jSN-ny-HvG" detailTextLabel="btj-rW-o3A" style="IBUITableViewCellStyleSubtitle" id="v0L-OZ-N1G">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v0L-OZ-N1G" id="NZC-Uz-Og9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSN-ny-HvG">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="btj-rW-o3A">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Tj5-Ba-Euv" kind="show" identifier="showRegister" id="P2x-go-k6h"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wpP-kW-NxX" id="xI0-Rg-aXr"/>
+                            <outlet property="delegate" destination="wpP-kW-NxX" id="Ag1-u5-ci2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Libros" id="NBF-1x-sU4">
+                        <barButtonItem key="rightBarButtonItem" title="登録" id="GE9-Fc-Hhd">
+                            <connections>
+                                <segue destination="Tj5-Ba-Euv" kind="show" id="KMV-07-M7O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iog-R4-4aK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="148"/>
+        </scene>
+        <!--本を登録-->
+        <scene sceneID="daJ-6d-SwT">
+            <objects>
+                <viewController storyboardIdentifier="register" id="Tj5-Ba-Euv" customClass="RegisterViewController" customModule="Libros" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cHg-Ga-bt0"/>
+                        <viewControllerLayoutGuide type="bottom" id="nZh-sT-tbM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTM-NX-gax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ISBN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yC-BV-aI0">
+                                <rect key="frame" x="16" y="104" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uxy-h7-WXI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJQ-fy-Yia">
+                                <rect key="frame" x="16" y="212" width="343" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="著者名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAE-e8-45g">
+                                <rect key="frame" x="16" y="280" width="343" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出版社名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Pq-Xy-yom">
+                                <rect key="frame" x="16" y="348" width="343" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx5-B3-yBh">
+                                <rect key="frame" x="259" y="158" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="rsl-RF-KBr"/>
+                                </constraints>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <segue destination="h5W-s0-8Tj" kind="show" id="hVm-pQ-sFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1B-jT-e17">
+                                <rect key="frame" x="151" y="158" width="100" height="40"/>
+                                <state key="normal" title="検索"/>
+                                <connections>
+                                    <action selector="onSearch:" destination="Tj5-Ba-Euv" eventType="touchUpInside" id="Vav-7s-gs4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OJQ-fy-Yia" firstAttribute="height" secondItem="5yC-BV-aI0" secondAttribute="height" id="2c3-HT-9Zu"/>
+                            <constraint firstItem="5yC-BV-aI0" firstAttribute="leading" secondItem="fTM-NX-gax" secondAttribute="leading" constant="16" id="8Sg-cn-m7a"/>
+                            <constraint firstItem="HAE-e8-45g" firstAttribute="height" secondItem="OJQ-fy-Yia" secondAttribute="height" id="A1t-1b-Kyz"/>
+                            <constraint firstItem="OJQ-fy-Yia" firstAttribute="trailing" secondItem="5yC-BV-aI0" secondAttribute="trailing" id="Ak1-Hh-gyj"/>
+                            <constraint firstItem="3Pq-Xy-yom" firstAttribute="height" secondItem="HAE-e8-45g" secondAttribute="height" id="FaF-iu-6yz"/>
+                            <constraint firstItem="3Pq-Xy-yom" firstAttribute="trailing" secondItem="HAE-e8-45g" secondAttribute="trailing" id="M42-dx-D0w"/>
+                            <constraint firstItem="HAE-e8-45g" firstAttribute="trailing" secondItem="OJQ-fy-Yia" secondAttribute="trailing" id="O7I-DJ-T7U"/>
+                            <constraint firstItem="bx5-B3-yBh" firstAttribute="leading" secondItem="b1B-jT-e17" secondAttribute="trailing" constant="8" id="Ogd-Vd-QUl"/>
+                            <constraint firstItem="bx5-B3-yBh" firstAttribute="height" secondItem="5yC-BV-aI0" secondAttribute="height" id="Rbr-Pc-m6l"/>
+                            <constraint firstItem="b1B-jT-e17" firstAttribute="top" secondItem="bx5-B3-yBh" secondAttribute="top" id="SeP-vg-8WJ"/>
+                            <constraint firstItem="bx5-B3-yBh" firstAttribute="top" secondItem="5yC-BV-aI0" secondAttribute="bottom" constant="14" id="Wyv-8v-c4D"/>
+                            <constraint firstItem="b1B-jT-e17" firstAttribute="bottom" secondItem="bx5-B3-yBh" secondAttribute="bottom" id="c2x-Tg-kih"/>
+                            <constraint firstItem="5yC-BV-aI0" firstAttribute="top" secondItem="cHg-Ga-bt0" secondAttribute="bottom" constant="40" id="fIk-cL-aub"/>
+                            <constraint firstItem="OJQ-fy-Yia" firstAttribute="top" secondItem="bx5-B3-yBh" secondAttribute="bottom" constant="14" id="gka-sK-S8i"/>
+                            <constraint firstItem="bx5-B3-yBh" firstAttribute="trailing" secondItem="5yC-BV-aI0" secondAttribute="trailing" id="kZm-tn-PSe"/>
+                            <constraint firstItem="OJQ-fy-Yia" firstAttribute="leading" secondItem="5yC-BV-aI0" secondAttribute="leading" id="ktm-wU-81R"/>
+                            <constraint firstItem="3Pq-Xy-yom" firstAttribute="leading" secondItem="HAE-e8-45g" secondAttribute="leading" id="le0-SS-KGo"/>
+                            <constraint firstItem="b1B-jT-e17" firstAttribute="width" secondItem="bx5-B3-yBh" secondAttribute="width" id="lxm-2w-90y"/>
+                            <constraint firstItem="HAE-e8-45g" firstAttribute="leading" secondItem="5yC-BV-aI0" secondAttribute="leading" id="oTo-UD-6g6"/>
+                            <constraint firstItem="3Pq-Xy-yom" firstAttribute="top" secondItem="HAE-e8-45g" secondAttribute="bottom" constant="28" id="ogh-lK-UNr"/>
+                            <constraint firstItem="HAE-e8-45g" firstAttribute="top" secondItem="OJQ-fy-Yia" secondAttribute="bottom" constant="28" id="rt7-Wq-oyb"/>
+                            <constraint firstAttribute="trailing" secondItem="bx5-B3-yBh" secondAttribute="trailing" constant="16" id="rv7-0L-Adj"/>
+                            <constraint firstAttribute="trailing" secondItem="5yC-BV-aI0" secondAttribute="trailing" constant="16" id="yFl-Xh-Ovu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="本を登録" id="rqq-4e-VGd">
+                        <barButtonItem key="rightBarButtonItem" title="登録" id="HUa-qr-re1">
+                            <connections>
+                                <action selector="onRegister:" destination="Tj5-Ba-Euv" id="fUJ-h6-RF1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorTextField" destination="HAE-e8-45g" id="waZ-jS-wqy"/>
+                        <outlet property="isbnTextField" destination="5yC-BV-aI0" id="xWG-bZ-cKA"/>
+                        <outlet property="publisherTextField" destination="3Pq-Xy-yom" id="MUy-Id-Cb1"/>
+                        <outlet property="titleTextField" destination="OJQ-fy-Yia" id="LCi-LN-Hly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8q-TJ-dQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1122" y="148"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="id3-DD-Ab9">
+            <objects>
+                <viewController id="h5W-s0-8Tj" customClass="ReaderViewController" customModule="Libros" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBb-I0-yg2"/>
+                        <viewControllerLayoutGuide type="bottom" id="GPH-An-uPa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rlj-Cc-A1t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOf-GY-32Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9OH-Nh-Po8">
+            <objects>
+                <navigationController id="nTC-kQ-lqw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fg3-fg-nYH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wpP-kW-NxX" kind="relationship" relationship="rootViewController" id="HRs-lm-S7H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNA-S8-IFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="148"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P2x-go-k6h"/>
+    </inferredMetricsTieBreakers>
+</document>
