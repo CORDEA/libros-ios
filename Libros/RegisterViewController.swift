@@ -9,9 +9,7 @@
 import UIKit
 import PKHUD
 
-class RegisterViewController: UIViewController {
-    
-    var code: String? = nil
+class RegisterViewController: UIViewController, ReaderViewControllerDelegate {
     
     var book: Book? = nil
     
@@ -25,16 +23,23 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let it = book {
             titleTextField.text = it.title
             isbnTextField.text = it.code
             authorTextField.text = it.author
             publisherTextField.text = it.publisher
         }
-        if let it = code {
-            search(code: it)
-        }
+    }
+    
+    @IBAction func onScan(_ sender: UIButton) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "reader") as! ReaderViewController
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func onReadCompleted(_ code: String) {
+        isbnTextField.text = code
+        search(code: code)
     }
     
     @IBAction func onRegister(_ sender: UIBarButtonItem) {

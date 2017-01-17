@@ -9,8 +9,14 @@
 import UIKit
 import AVFoundation
 
+protocol ReaderViewControllerDelegate {
+    func onReadCompleted(_ code: String)
+}
+
 class ReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    var delegate: ReaderViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,10 +59,9 @@ class ReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         let metadata = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metadata.type == AVMetadataObjectTypeEAN13Code {
-            let msg = metadata.stringValue ?? ""
-            print(msg)
-            if let controller = navigationController?.popViewController(animated: true) as? RegisterViewController {
-                controller.code = msg
+            if let code = metadata.stringValue {
+                _ = navigationController?.popViewController(animated: true)
+                delegate?.onReadCompleted(code)
             }
         }
     }
